@@ -7,9 +7,13 @@ mahjong-state initialization and replaces the hard-coded starting score.
 
 You need [this patcher](https://github.com/arition/SRM-VR-BepInEx-Patcher) to load the mod.
 
-## Build and install
+## Install
 
-Close the game, open PowerShell in this directory, and run:
+Download the dll from <https://github.com/arition/SRM-VR-initial-score-mod/releases/latest>, put it in `<SRM-VR>\BepInEx\plugins\SrmVrInitialScore\SrmVrInitialScore.dll`.
+
+## Build
+
+Clone the repo into `<SRM-VR>\Mods`, open terminal, and run:
 
 ```powershell
 dotnet build -c Release
