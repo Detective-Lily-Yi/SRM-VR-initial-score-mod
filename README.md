@@ -1,7 +1,11 @@
-# SRM-VR Initial Score
+# SRM-VR Initial Score Mod
 
-This is a minimal BepInEx 6 IL2CPP plugin for SRM-VR. It intercepts the live
+[![](https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3718190/98ac8863e8362f32687934637fe7a776bff8b34b/library_header_japanese_2x.jpg)](https://store.steampowered.com/app/3718190/)
+
+This is a BepInEx 6 mod for SRM-VR (スーパーリアル麻雀 Venus Returns / Super Real Mahjong Venus Returns / 超真实麻将 Venus Returns). It intercepts the live
 mahjong-state initialization and replaces the hard-coded starting score.
+
+You need [this patcher](https://github.com/arition/SRM-VR-BepInEx-Patcher) to load the mod.
 
 ## Build and install
 
@@ -46,17 +50,3 @@ Changed initial score for player 1: 1000 -> 10000.
 
 The first line confirms that BepInEx loaded the plugin. The following lines
 confirm that the patch replaced the score written into each live player record.
-
-The game contains a field named `MahjongMain._init_tokuten`, but this build does
-not read that field when it creates the score records. `MahjongMain.fre()` passes
-the literal value `1000` to `fa.cnx(int playerIndex, int score)` instead. The mod
-marks that initialization window and changes only those calls, so later score
-changes of exactly 1000 are left alone.
-
-## Why these references are local
-
-SRM-VR uses IL2CPP. Game types such as `MahjongMain` are exposed through proxy
-assemblies generated in `BepInEx\interop`; for this patch the relevant assembly
-is `P5.dll`. The project references the exact BepInEx and game DLLs installed
-beside it and marks them as non-copying references, so the plugin output contains
-only the mod DLL.
