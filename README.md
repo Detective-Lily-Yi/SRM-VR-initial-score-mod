@@ -5,11 +5,11 @@
 This is a BepInEx 6 mod for SRM-VR (スーパーリアル麻雀 Venus Returns / Super Real Mahjong Venus Returns / 超真实麻将 Venus Returns). It intercepts the live
 mahjong-state initialization and replaces the hard-coded starting score.
 
-You need [this patcher](https://github.com/arition/SRM-VR-BepInEx-Patcher) to load the mod.
+You need [this patcher](https://github.com/Detective-Lily-Yi/SRM-VR-BepInEx-Patcher) to load the mod.
 
 ## Install
 
-Download the dll from <https://github.com/arition/SRM-VR-initial-score-mod/releases/latest>, put it in `<SRM-VR>\BepInEx\plugins\SrmVrInitialScore\SrmVrInitialScore.dll`.
+Download the dll from <https://github.com/Detective-Lily-Yi/SRM-VR-initial-score-mod/releases/latest>, put it in `<SRM-VR>\BepInEx\plugins\SrmVrInitialScore\SrmVrInitialScore.dll`.
 
 ## Build
 

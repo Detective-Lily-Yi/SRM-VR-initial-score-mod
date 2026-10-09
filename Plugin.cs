@@ -50,7 +50,8 @@ internal static class ScoreInitializationContext
 // MahjongMain.fre() constructs the live mahjong state and fills every player's
 // score array. This build passes a hard-coded 1000 to fa.cnx(); it does not read
 // the similarly named MahjongMain._init_tokuten field.
-[HarmonyPatch(typeof(MahjongMain), nameof(MahjongMain.fre))]
+//33 F6 C7 83 ? ? ? ? ? ? ? ? 89 B3 ? ? ? ? 48 8B 05 ? ? ? ? 39 B0 ? ? ? ? 75 ? 48 8B C8 E8 ? ? ? ? 48 8B 05 ? ? ? ? 48 8B 80 ? ? ? ? 89 70 ? 48 8B 83 ? ? ? ? 66 89 B3
+[HarmonyPatch(typeof(MahjongMain), nameof(MahjongMain.gai))]
 internal static class MahjongStateInitializationPatch
 {
     private static void Prefix()
@@ -64,7 +65,9 @@ internal static class MahjongStateInitializationPatch
     }
 }
 
-[HarmonyPatch(typeof(fa), nameof(fa.cnx))]
+//fl__bnm(this: v29, a: v17++, b: 1000, method: nullptr);
+//45 33 C9 41 B8 E8 03 00 00 8B D6 48 8B CF E8 ? ? ? ? FF C6 3B F5 7C
+[HarmonyPatch(typeof(fl), nameof(fl.bnm))]
 internal static class InitialPlayerScorePatch
 {
     private static void Prefix(

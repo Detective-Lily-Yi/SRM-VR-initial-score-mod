@@ -8,10 +8,10 @@
 
     <AssemblyName>SrmVrInitialScore</AssemblyName>
     <RootNamespace>SrmVrInitialScore</RootNamespace>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
 
     <!-- This project lives at <game>\Mods\SrmVrInitialScore. -->
-    <GameDir>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\..'))</GameDir>
+    <GameDir>V:\SRMVR</GameDir>
     <DeployDir>$(GameDir)\BepInEx\plugins\SrmVrInitialScore</DeployDir>
     <DeployToGame Condition="'$(DeployToGame)' == ''">true</DeployToGame>
   </PropertyGroup>
